@@ -1,0 +1,15 @@
+name: dart_extras
+description: Dart Extensions
+version: 0.0.1
+author: mobiplay
+
+environment:
+  sdk: ">=2.10.0 <3.0.0"
+
+dependencies:
+  equatable: 1.2.6
+  source_span: 1.8.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
