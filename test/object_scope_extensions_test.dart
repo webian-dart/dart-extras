@@ -40,7 +40,8 @@ void main() {
 
     test("not run the provided callback when null", () {
       var called = false;
-      null.runNotNull(() {
+      Object? nullable;
+      nullable.runNotNull(() {
         called = true;
       });
       expect(called, false);
@@ -49,7 +50,8 @@ void main() {
     test("run left when null", () {
       var rightCalled = false;
       var leftCalled = false;
-      null.either((it) => rightCalled = true, () => leftCalled = true);
+      Object? nullable;
+      nullable.either((it) => rightCalled = true, () => leftCalled = true);
       expect(rightCalled, false, reason: "right");
       expect(leftCalled, true, reason: "left");
     });

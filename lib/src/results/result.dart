@@ -24,19 +24,19 @@ class Result implements TaskResult {
 
   Result.error(String error)
       : this.wasSuccessful = false,
-        this.error = error ?? "",
+        this.error = error,
         this.isEmpty = false,
         this.isPending = false;
 
-  Result.empty({bool isPending})
+  Result.empty({bool isPending = false})
       : this.wasSuccessful = false,
         this.error = "",
         this.isEmpty = true,
-        this.isPending = isPending ?? false;
+        this.isPending = isPending;
 
   Result.clone(Result other)
-      : this.wasSuccessful = other?.wasSuccessful ?? false,
-        this.error = other?.error ?? "",
-        this.isEmpty = other?.isEmpty ?? true,
-        this.isPending = other?.isPending ?? false;
+      : this.wasSuccessful = other.wasSuccessful,
+        this.error = other.error,
+        this.isEmpty = other.isEmpty,
+        this.isPending = other.isPending;
 }

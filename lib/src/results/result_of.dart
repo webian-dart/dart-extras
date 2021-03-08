@@ -3,14 +3,16 @@ import './success.dart';
 import './task_result.dart';
 
 class ResultOf<T> extends TaskResult {
-  static final defaultedFailureError = Exception("ResultOf created with a defaulted Failure cannot be "
-      "instantiated with a null value. Use ResulfOf.failure() instead, if "
-      "this was intentinal");
+  static final defaultedFailureError =
+      Exception("ResultOf created with a defaulted Failure cannot be "
+          "instantiated with a null value. Use ResulfOf.failure() instead, if "
+          "this was intentinal");
 
-  static final successDoesNotTakeNullError = Exception("ResultOf.success(value) cannot be created with null! "
-      "If you want to indicate Nullity user the Null Pattern.");
+  static final successDoesNotTakeNullError =
+      Exception("ResultOf.success(value) cannot be created with null! "
+          "If you want to indicate Nullity user the Null Pattern.");
 
-  final T value;
+  final T? value;
   final Result result;
 
   bool get wasSuccessful => result.wasSuccessful;
@@ -24,7 +26,7 @@ class ResultOf<T> extends TaskResult {
       : this.value = null,
         this.result = Success();
 
-  ResultOf.empty({bool isPending})
+  ResultOf.empty({bool isPending = false})
       : this.value = null,
         this.result = Result.empty(isPending: isPending);
 
@@ -40,13 +42,13 @@ class ResultOf<T> extends TaskResult {
 
   ResultOf.error(String message)
       : this.value = null,
-        this.result = Result.error(message ?? "");
+        this.result = Result.error(message);
 
   ResultOf.clone(ResultOf<T> other)
-      : this.value = other?.value,
-        this.result = Result.clone(other?.result);
+      : this.value = other.value,
+        this.result = Result.clone(other.result);
 
-  String errorMessage() => this.result?.error ?? "";
+  String errorMessage() => this.result.error;
 
   bool hasValue() => value != null;
 

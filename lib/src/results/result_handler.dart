@@ -4,10 +4,10 @@ typedef OnSuccess<T>(ResultOf<T> result);
 typedef OnError<T>(ResultOf<T> result);
 
 class ResultHandler<T> {
-  final OnSuccess _onSuccess;
-  final OnError _onError;
+  final OnSuccess? _onSuccess;
+  final OnError? _onError;
 
-  ResultHandler({OnSuccess onSuccess, OnError onError})
+  ResultHandler({OnSuccess? onSuccess, OnError? onError})
       : this._onSuccess = onSuccess,
         this._onError = onError;
 

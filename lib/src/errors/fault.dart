@@ -5,7 +5,7 @@ class Fault with EquatableMixin implements Exception {
 
   final String message;
 
-  const Fault([String message]) : this.message = message ?? "";
+  const Fault([String? message]) : this.message = message ?? "";
 
   @override
   List<Object> get props => [message];

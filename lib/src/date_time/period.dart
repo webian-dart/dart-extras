@@ -10,7 +10,7 @@ class Period with EquatableMixin {
   final DateTime end;
   final DateTimeClock clock;
 
-  Period(this.start, DateTime end, {DateTimeClock clock})
+  Period(this.start, DateTime end, {DateTimeClock? clock})
       : clock = clock ?? Clock(),
         this.end = end.isAfter(start) ? end : start;
 
@@ -26,9 +26,11 @@ class Period with EquatableMixin {
 
   bool get hasNotStarted => !hasStarted;
 
-  bool get hasEnded => clock.now().let((it) =>
-      it.isAfter(end) && it.isAfter(start) ||
-      it.isAtSameMomentAs(start) && isEmpty);
+  bool get hasEnded =>
+      clock.now().let((it) =>
+          it.isAfter(end) && it.isAfter(start) ||
+          it.isAtSameMomentAs(start) && isEmpty) ??
+      true;
 
   bool get isEmpty => this is EmptyPeriod || end.isAtSameMomentAs(start);
 

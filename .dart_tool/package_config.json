@@ -39,9 +39,9 @@
     },
     {
       "name": "equatable",
-      "rootUri": "file:///Users/tautalos/.pub-cache/hosted/pub.dartlang.org/equatable-1.2.6",
+      "rootUri": "file:///Users/tautalos/.pub-cache/hosted/pub.dartlang.org/equatable-2.0.0",
       "packageUri": "lib/",
-      "languageVersion": "2.0"
+      "languageVersion": "2.12"
     },
     {
       "name": "fake_async",
@@ -51,13 +51,13 @@
     },
     {
       "name": "flutter",
-      "rootUri": "file:///Users/tautalos/fvm/default/packages/flutter",
+      "rootUri": "file:///Users/tautalos/fvm/versions/2.0.1/packages/flutter",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "flutter_test",
-      "rootUri": "file:///Users/tautalos/fvm/default/packages/flutter_test",
+      "rootUri": "file:///Users/tautalos/fvm/versions/2.0.1/packages/flutter_test",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -81,13 +81,13 @@
     },
     {
       "name": "sky_engine",
-      "rootUri": "file:///Users/tautalos/fvm/default/bin/cache/pkg/sky_engine",
+      "rootUri": "file:///Users/tautalos/fvm/versions/2.0.1/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "source_span",
-      "rootUri": "file:///Users/tautalos/.pub-cache/hosted/pub.dartlang.org/source_span-1.8.1",
+      "rootUri": "file:///Users/tautalos/.pub-cache/hosted/pub.dartlang.org/source_span-1.8.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -137,10 +137,10 @@
       "name": "dart_extras",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.10"
+      "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-03-01T22:38:43.309938Z",
+  "generated": "2021-03-07T23:32:34.630359Z",
   "generator": "pub",
-  "generatorVersion": "2.13.0-30.0.dev"
+  "generatorVersion": "2.12.0"
 }
