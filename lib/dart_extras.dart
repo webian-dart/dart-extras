@@ -4,6 +4,7 @@ export 'src/cloneable.dart';
 export 'src/date_time/date_time_export.dart';
 export 'src/errors/fault.dart' show Fault;
 export 'src/object_scope_extensions.dart' show ObjectScopeExtensions;
+export 'src/list_extensions.dart';
 export 'src/option.dart';
 export 'src/resources/resource_resolver.dart' show ResourceResolver;
 export 'src/results/results.dart';

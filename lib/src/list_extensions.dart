@@ -9,3 +9,8 @@ extension on List<String> {
     return this.toSet().toList();
   }
 }
+
+extension ListExtensions<T extends List> on T? {
+  List<T> noNulls<T>() => this?.whereType<T>().where((it) => it != null).toList() ?? <T>[];
+}
+
