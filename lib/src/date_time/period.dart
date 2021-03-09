@@ -1,6 +1,6 @@
 import 'package:dart_extras/src/date_time/clock.dart';
 import 'package:dart_extras/src/date_time/date_time_clock.dart';
-import "package:dart_extras/src/object_scope_extensions.dart";
+import "package:dart_extras/src/nullable_object_scope_extensions.dart";
 import 'package:equatable/equatable.dart';
 
 import 'dates.dart';
