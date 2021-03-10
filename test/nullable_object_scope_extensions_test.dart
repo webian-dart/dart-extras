@@ -69,10 +69,10 @@ void main() {
         () {
       final Object? nill = null;
       final resultFromNull =
-          nill.fromEither((it) => "should not reach here", () => "correct");
+          nill.notNullOr((it) => "should not reach here", () => "correct");
       expect(resultFromNull, "correct", reason: "Did not reach Or");
       final Object? notNill = Object();
-      final resultFromNotNill = notNill.fromEither(
+      final resultFromNotNill = notNill.notNullOr(
           (it) => "Is not Null", () => "Wrong should have run the other");
       expect(resultFromNotNill, "Is not Null",
           reason: "Should have returned the result of the first function");

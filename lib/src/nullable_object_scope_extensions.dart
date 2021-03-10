@@ -27,7 +27,7 @@ extension NullableObjectScopeExtensions<T extends Object> on T? {
     this != null ? right(this!) : left();
   }
 
-  R fromEither<R>(R Function(T self) right, R Function() left) {
+  R notNullOr<R>(R Function(T self) right, R Function() left) {
     return this != null ? right(this!) : left();
   }
 }
