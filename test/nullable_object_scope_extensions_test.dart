@@ -63,5 +63,19 @@ void main() {
       expect(rightCalled, true, reason: "right");
       expect(leftCalled, false, reason: "left");
     });
+
+    test(
+        "get a value from either the first function when not null or the other when so",
+        () {
+      final Object? nill = null;
+      final resultFromNull =
+          nill.fromEither((it) => "should not reach here", () => "correct");
+      expect(resultFromNull, "correct", reason: "Did not reach Or");
+      final Object? notNill = Object();
+      final resultFromNotNill = notNill.fromEither(
+          (it) => "Is not Null", () => "Wrong should have run the other");
+      expect(resultFromNotNill, "Is not Null",
+          reason: "Should have returned the result of the first function");
+    });
   });
 }
