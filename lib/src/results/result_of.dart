@@ -19,6 +19,8 @@ class ResultOf<T> extends TaskResult {
 
   bool get failed => !wasSuccessful;
 
+  bool isSuccessWithValue() => wasSuccessful && hasValue();
+
   @override
   String get error => errorMessage();
 

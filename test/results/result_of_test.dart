@@ -39,12 +39,31 @@ void main() {
     });
 
     test("tell us if it has value or not", () {
-      final failure = ResultOf.errorWithValue("some error payload");
+      final failure = ResultOf.error("some error payload");
+      expect(failure.doesNotHaveValue(), true,
+          reason: "Error with a Value should have a value");
+      expect(failure.hasValue(), false,
+          reason: "Error with a Value should have a value");
+      expect(failure.isSuccessWithValue(), false,
+          reason: 'Error with value, is Success Value');
+
+      final failureWithValue = ResultOf.errorWithValue(Object());
+      expect(failureWithValue.doesNotHaveValue(), false,
+          reason: "Error with a Value should have a value");
+      expect(failureWithValue.hasValue(), true,
+          reason: "Error with a Value should have a value");
+      expect(failureWithValue.isSuccessWithValue(), false,
+          reason: 'Error with value, is Success Value');
+
       final success = ResultOf.succeededWithoutValue();
-      expect(failure.doesNotHaveValue(), false);
-      expect(failure.hasValue(), true);
       expect(success.doesNotHaveValue(), true);
       expect(success.hasValue(), false);
+      expect(success.isSuccessWithValue(), false);
+
+      final successWithValue = ResultOf.success("");
+      expect(successWithValue.doesNotHaveValue(), false);
+      expect(successWithValue.hasValue(), true);
+      expect(successWithValue.isSuccessWithValue(), true);
     });
     test("return a failure result", () {
       final failure = ResultOf.error("some error");
